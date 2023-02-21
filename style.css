@@ -26,6 +26,9 @@ h1 {
   width: calc(100% / 3);
   float: left;
 	
+display: inline-block;
+vertical-align: top;
+	
 }
 
 /* Header styles */
