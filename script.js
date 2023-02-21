@@ -1,22 +1,13 @@
-// Select the navigation links and add a click event
-// Select the button element
-const button = document.querySelector('button');
+function rollDice() {
+  var dice1 = document.getElementById("dice1");
+  var dice2 = document.getElementById("dice2");
+  var dice3 = document.getElementById("dice3");
 
-// Add an event listener to the button
-button.addEventListener('click', rollDices);
+  var dice1Value = Math.floor(Math.random() * 6) + 1;
+  var dice2Value = Math.floor(Math.random() * 6) + 1;
+  var dice3Value = Math.floor(Math.random() * 6) + 1;
 
-function rollDices() {
-  const dices = document.querySelectorAll('.dice');
-  
-  // Roll each dice
-  dices.forEach(dice => {
-    const randomNumber = Math.floor(Math.random() * 6) + 1;
-    dice.textContent = randomNumber;
-  });
+  dice1.innerHTML = dice1Value;
+  dice2.innerHTML = dice2Value;
+  dice3.innerHTML = dice3Value;
 }
-
-// Add the Roll Dices button dynamically
-const container = document.querySelector('.dice-container');
-const newButton = document.createElement('button');
-newButton.textContent = 'Roll Dices';
-container.appendChild(newButton);
