@@ -1,17 +1,15 @@
-/* Reset styles */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* Body styles */
 body {
   background-color: #6699CC;
 }
 
 h1 {
-  color: yellow;
+  color: white;
   text-align: center;
   font-size: 48px;
   margin-top: 100px;
@@ -23,10 +21,12 @@ h1 {
   padding: 10px;
   background-color: white;
   border: 1px solid black;
-  flex-basis: calc(100% / 3);
+  width: calc(100% / 3);
+  float: left;
+  display: inline-block;
+  vertical-align: top;
 }
 
-/* Header styles */
 header {
   background-color: #333;
   color: #fff;
@@ -57,13 +57,10 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Main styles */
 main {
-  max-width: none;
-  width: 100%;
+  max-width: 960px;
   margin: 0 auto;
   padding: 20px;
-  display: flex;
 }
 
 section {
@@ -74,7 +71,6 @@ section h2 {
   margin-bottom: 10px;
 }
 
-/* Footer styles */
 footer {
   background-color: #333;
   color: #fff;
@@ -86,34 +82,21 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
+  height: 100px;
 }
 
 .dice {
-  width: 50px;
-  height: 50px;
-  margin: 10px;
-  background-color: #fff;
-  border: 1px solid #000;
+  width: 75px;
+  height: 75px;
+  background-color: white;
+  border: 2px solid black;
+  margin: 0 10px;
+  font-size: 48px;
   text-align: center;
-  font-size: 24px;
-  font-weight: bold;
+  line-height: 75px;
 }
 
+button {
+  display: block;
+  margin-top:
 
-/* Media queries */
-@media (max-width: 767px) {
-  header {
-    text-align: center;
-  }
-
-  nav ul {
-    display: block;
-    text-align: center;
-  }
-
-  nav li {
-    display: block;
-    margin: 10px 0;
-  }
-}
