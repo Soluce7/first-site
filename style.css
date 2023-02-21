@@ -23,7 +23,7 @@ h1 {
   padding: 10px;
   background-color: white;
   border: 1px solid black;
-  width: calc(100% / 3);
+  flex-basis: calc(100% / 3);
 }
 
 /* Header styles */
