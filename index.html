@@ -54,4 +54,43 @@
       color: white;
       padding: 15px 32px;
       text-align: center;
-
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Website</h1>
+  </header>
+  <div class="container">
+    <div class="dice">
+      <p id="dice1">-</p>
+    </div>
+    <div class="dice">
+      <p id="dice2">-</p>
+    </div>
+    <div class="dice">
+      <p id="dice3">-</p>
+    </div>
+    <button id="rollDiceButton">Roll Dice</button>
+  </div>
+  <script>
+    function rollDice() {
+      var dice1 = Math.floor(Math.random() * 6) + 1;
+      var dice2 = Math.floor(Math.random() * 6) + 1;
+      var dice3 = Math.floor(Math.random() * 6) + 1;
+      
+      document.getElementById("dice1").textContent = dice1;
+      document.getElementById("dice2").textContent = dice2;
+      document.getElementById("dice3").textContent = dice3;
+    }
+    
+    document.getElementById("rollDiceButton").addEventListener("click", rollDice);
+  </script>
+</body>
+</html>
