@@ -12,3 +12,24 @@ function rollDice() {
   dice2.src = "https://dummyimage.com/100x100/000/fff&text=" + dice2Value;
   dice3.src = "https://dummyimage.com/100x100/000/fff&text=" + dice3Value;
 }
+const dice1 = document.getElementById("dice1");
+const dice2 = document.getElementById("dice2");
+const dice3 = document.getElementById("dice3");
+const rollDiceBtn = document.getElementById("roll-dice-btn");
+
+const rollDice = () => {
+  const diceValues = [];
+
+  // Roll three dice
+  for (let i = 0; i < 3; i++) {
+    const randomNum = Math.floor(Math.random() * 6) + 1;
+    diceValues.push(randomNum);
+  }
+
+  // Display dice values
+  dice1.innerHTML = diceValues[0];
+  dice2.innerHTML = diceValues[1];
+  dice3.innerHTML = diceValues[2];
+};
+
+rollDiceBtn.addEventListener("click", rollDice);
