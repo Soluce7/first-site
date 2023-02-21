@@ -1,35 +1,22 @@
 // Select the navigation links and add a click event
-function rollDice() {
-  var dice1 = document.getElementById("dice1");
-  var dice2 = document.getElementById("dice2");
-  var dice3 = document.getElementById("dice3");
+// Select the button element
+const button = document.querySelector('button');
+
+// Add an event listener to the button
+button.addEventListener('click', rollDices);
+
+function rollDices() {
+  const dices = document.querySelectorAll('.dice');
   
-  var dice1Value = Math.floor(Math.random() * 6) + 1;
-  var dice2Value = Math.floor(Math.random() * 6) + 1;
-  var dice3Value = Math.floor(Math.random() * 6) + 1;
-  
-  dice1.src = "https://dummyimage.com/100x100/000/fff&text=" + dice1Value;
-  dice2.src = "https://dummyimage.com/100x100/000/fff&text=" + dice2Value;
-  dice3.src = "https://dummyimage.com/100x100/000/fff&text=" + dice3Value;
+  // Roll each dice
+  dices.forEach(dice => {
+    const randomNumber = Math.floor(Math.random() * 6) + 1;
+    dice.textContent = randomNumber;
+  });
 }
-const dice1 = document.getElementById("dice1");
-const dice2 = document.getElementById("dice2");
-const dice3 = document.getElementById("dice3");
-const rollDiceBtn = document.getElementById("roll-dice-btn");
 
-const rollDice = () => {
-  const diceValues = [];
-
-  // Roll three dice
-  for (let i = 0; i < 3; i++) {
-    const randomNum = Math.floor(Math.random() * 6) + 1;
-    diceValues.push(randomNum);
-  }
-
-  // Display dice values
-  dice1.innerHTML = diceValues[0];
-  dice2.innerHTML = diceValues[1];
-  dice3.innerHTML = diceValues[2];
-};
-
-rollDiceBtn.addEventListener("click", rollDice);
+// Add the Roll Dices button dynamically
+const container = document.querySelector('.dice-container');
+const newButton = document.createElement('button');
+newButton.textContent = 'Roll Dices';
+container.appendChild(newButton);
