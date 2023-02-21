@@ -45,5 +45,25 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 80px;
+  background-color: lightgray;
+  padding: 10px 20px;
+}
 
+.logo {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+nav a {
+  margin: 0 10px;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+
+nav a:hover {
+  color: white;
+}
 
