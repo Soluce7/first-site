@@ -82,6 +82,18 @@ footer {
   text-align: center;
 }
 
+.dice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dice img {
+  width: 100px;
+  height: 100px;
+  margin: 0 10px;
+}
+
 /* Media queries */
 @media (max-width: 767px) {
   header {
