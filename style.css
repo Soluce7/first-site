@@ -7,11 +7,22 @@
 
 /* Body styles */
 body {
-	font-family: Arial, sans-serif;
-	font-size: 16px;
-	line-height: 1.5;
-	color: #333;
-	background-color: #ADD8E6;
+  background-color: #6699CC;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  font-size: 48px;
+  margin-top: 100px;
+}
+
+.column {
+  flex: 1;
+  margin: 10px;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid black;
 }
 
 /* Header styles */
