@@ -1,77 +1,84 @@
-const dice1 = document.getElementById('dice1');
-const dice2 = document.getElementById('dice2');
-const dice3 = document.getElementById('dice3');
-const rollButton = document.getElementById('roll-button');
-const standButton = document.getElementById('stand-button');
-const throwsCount = document.getElementById('throws-count');
+// DOM Elements
+const rollDiceBtn = document.querySelector("#roll-dice-btn");
+const standBtn = document.querySelector("#stand-btn");
+const diceEl1 = document.querySelector("#dice-1");
+const diceEl2 = document.querySelector("#dice-2");
+const diceEl3 = document.querySelector("#dice-3");
+const throwsEl = document.querySelector("#throws");
+
+// Game state variables
 let throws = 0;
+let dice1Value = 0;
+let dice2Value = 0;
+let dice3Value = 0;
 let frozenDice = [];
 
+// Helper function to roll a single dice
 function rollDice() {
-  let diceValues = [];
-
-  // check which dice should be frozen
-  let shouldFreezeDice = frozenDice.length < 3;
-  if (!shouldFreezeDice) {
-    frozenDice = [];
-  }
-
-  for (let i = 0; i < 3; i++) {
-    let randomValue;
-    if (shouldFreezeDice && frozenDice.includes(i)) {
-      // if the dice is frozen, use its existing value
-      randomValue = parseInt(diceValues[i - 1]);
-    } else {
-      randomValue = Math.floor(Math.random() * 6) + 1;
-    }
-
-    diceValues.push(randomValue);
-  }
-
-  // update the dice values in the HTML
-  dice1.textContent = diceValues[0];
-  dice2.textContent = diceValues[1];
-  dice3.textContent = diceValues[2];
-
-  throws++;
-  throwsCount.textContent = throws + ' throws';
+  return Math.floor(Math.random() * 6) + 1;
 }
 
-function freezeDice(event) {
-  const diceId = event.target.id;
-  const diceIndex = diceId[diceId.length - 1] - 1;
-  if (!frozenDice.includes(diceIndex)) {
-    frozenDice.push(diceIndex);
-    document.getElementById(diceId).classList.add('frozen');
+// Helper function to roll all three dices
+function rollAllDices() {
+  dice1Value = rollDice();
+  dice2Value = rollDice();
+  dice3Value = rollDice();
+  displayDiceValues();
+}
+
+// Helper function to display the values of the dices
+function displayDiceValues() {
+  diceEl1.textContent = dice1Value;
+  diceEl2.textContent = dice2Value;
+  diceEl3.textContent = dice3Value;
+}
+
+// Helper function to handle a dice being clicked
+function toggleFreezeDice(dice) {
+  if (frozenDice.includes(dice)) {
+    frozenDice = frozenDice.filter((d) => d !== dice);
+    document.querySelector(`#dice-${dice}`).classList.remove("frozen");
   } else {
-    frozenDice.splice(frozenDice.indexOf(diceIndex), 1);
-    document.getElementById(diceId).classList.remove('frozen');
+    frozenDice.push(dice);
+    document.querySelector(`#dice-${dice}`).classList.add("frozen");
   }
 }
 
-function stand() {
-  // save the current dice values to the right side
-  const scoreList = document.getElementById('score-list');
-  const newScore = document.createElement('li');
-  newScore.textContent = dice1.textContent + ' ' + dice2.textContent + ' ' + dice3.textContent;
-  scoreList.appendChild(newScore);
+// Event listener for the Roll Dice button
+rollDiceBtn.addEventListener("click", () => {
+  if (throws < 3) {
+    throws++;
+    rollAllDices();
+    throwsEl.textContent = `Throws: ${throws}`;
+  }
+});
 
-  // reset the throws and frozen dice
+// Event listener for the Stand button
+standBtn.addEventListener("click", () => {
+  // Save the current score
+  const score = [dice1Value, dice2Value, dice3Value];
+  // Reset game state variables
   throws = 0;
-  throwsCount.textContent = throws + ' throws';
+  dice1Value = 0;
+  dice2Value = 0;
+  dice3Value = 0;
   frozenDice = [];
+  // Clear frozen classes from all dices
+  document.querySelectorAll(".dice").forEach((diceEl) => {
+    diceEl.classList.remove("frozen");
+  });
+  // Clear throws display
+  throwsEl.textContent = "";
+  // Clear dice values display
+  diceEl1.textContent = "";
+  diceEl2.textContent = "";
+  diceEl3.textContent = "";
+  // TODO: Save score and start a new game
+  console.log(score);
+});
 
-  // reset the dice values to empty
-  dice1.textContent = '';
-  dice2.textContent = '';
-  dice3.textContent = '';
-  document.getElementById('dice1').classList.remove('frozen');
-  document.getElementById('dice2').classList.remove('frozen');
-  document.getElementById('dice3').classList.remove('frozen');
-}
+// Event listeners for each dice
+diceEl1.addEventListener("click", () => toggleFreezeDice(1));
+diceEl2.addEventListener("click", () => toggleFreezeDice(2));
+diceEl3.addEventListener("click", () => toggleFreezeDice(3));
 
-rollButton.addEventListener('click', rollDice);
-dice1.addEventListener('click', freezeDice);
-dice2.addEventListener('click', freezeDice);
-dice3.addEventListener('click', freezeDice);
-standButton.addEventListener('click', stand);
