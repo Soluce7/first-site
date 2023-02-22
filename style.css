@@ -1,125 +1,68 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
 .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 20px;
-}
-
-.dice-container {
-  display: flex;
-}
-
-.dice {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+  background-color: #efefef;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+}
+
+.dice {
   width: 100px;
   height: 100px;
-  margin-right: 20px;
-  border: 2px solid black;
-  border-radius: 10px;
-  font-size: 30px;
-  font-weight: bold;
-  color: white;
-  background-color: #F44336;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  border: 2px solid #666666;
+  font-size: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
 }
 
+.dice:hover {
+  background-color: #ffffcc;
+}
+
 .dice.frozen {
-  background-color: yellow;
-  cursor: default;
+  background-color: #ffffcc;
 }
 
 .buttons {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  margin: 20px 0;
+}
+
+#roll-button {
   margin-right: 20px;
 }
 
-button {
-  font-size: 20px;
-  font-weight: bold;
-  padding: 10px 20px;
-  margin-bottom: 10px;
-  border: none;
-  border-radius: 10px;
-  background-color: #F44336;
-  color: white;
-  cursor: pointer;
+.score {
+  text-align: center;
 }
 
-button:hover {
-  background-color: #e53935;
+.score h2 {
+  margin-top: 0;
 }
 
-.count {
-  font-size: 30px;
-  font-weight: bold;
-}
-
-.results {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-right: 20px;
-}
-
-.results-header {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.results-list {
-  list-style: none;
-  padding: 0;
+.score ul {
   margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.results-item {
-  font-size: 16px;
+.score li {
   margin-bottom: 5px;
-}
-
-.results-item:last-child {
-  margin-bottom: 0;
-}
-
-@media (max-width: 600px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .dice-container {
-    margin-bottom: 20px;
-  }
-
-  .dice {
-    margin-right: 10px;
-    width: 80px;
-    height: 80px;
-    font-size: 24px;
-  }
-
-  .buttons {
-    margin-right: 0;
-  }
-
-  .results {
-    margin-right: 0;
-  }
+  font-size: 18px;
 }
