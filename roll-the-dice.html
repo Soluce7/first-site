@@ -2,42 +2,31 @@
 <html>
   <head>
     <title>Roll the Dice</title>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
-
   <body>
-    <div class="header">
-      <h1>Welcome to the games!</h1>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="roll-the-dice.html">Roll the Dice</a>
-        <a href="black-jack.html">Black Jack</a>
-        <a href="read-a-book.html">Read a Book</a>
-      </nav>
-    </div>
-
     <div class="container">
-      <h2>Roll the Dice</h2>
-      <div class="dice-container">
-        <div class="dice" id="dice1"></div>
-        <div class="dice" id="dice2"></div>
-        <div class="dice" id="dice3"></div>
+      <h1>Roll the Dice</h1>
+      <div class="game-container">
+        <div class="dice-container">
+          <div class="dice" id="dice1"></div>
+          <div class="dice" id="dice2"></div>
+          <div class="dice" id="dice3"></div>
+        </div>
+        <div class="buttons-container">
+          <button id="rollBtn" onclick="rollDice()">Roll Dice</button>
+          <button id="standBtn" onclick="stand()">Stand</button>
+        </div>
+        <div class="throws-count">
+          <span>Throws: </span>
+          <span id="throwsCount">0</span>
+        </div>
       </div>
-      <div class="button-container">
-        <button class="roll-button" id="roll-dice-btn">Roll Dice</button>
-        <button class="stand-button" id="stand-btn">Stand</button>
-      </div>
-      <div class="throw-count">
-        <p>Throws: <span id="throw-count-value">0</span>/3</p>
-      </div>
-      <div class="score-container">
-        <h3>Scores</h3>
-        <ul id="score-list">
-        </ul>
+      <div class="scores-container">
+        <h2>Scores</h2>
+        <div id="scores"></div>
       </div>
     </div>
-
     <script src="script.js"></script>
   </body>
 </html>
