@@ -1,25 +1,13 @@
-const diceSides = [
-  "&#9856;",
-  "&#9857;",
-  "&#9858;",
-  "&#9859;",
-  "&#9860;",
-  "&#9861;"
-];
-
-const rollDiceBtn = document.getElementById("roll-dice-btn");
-const dice1 = document.getElementById("dice1");
-const dice2 = document.getElementById("dice2");
-const dice3 = document.getElementById("dice3");
-
 function rollDice() {
-  const value1 = diceSides[Math.floor(Math.random() * diceSides.length)];
-  const value2 = diceSides[Math.floor(Math.random() * diceSides.length)];
-  const value3 = diceSides[Math.floor(Math.random() * diceSides.length)];
+  var dice1 = document.getElementById("dice1");
+  var dice2 = document.getElementById("dice2");
+  var dice3 = document.getElementById("dice3");
 
-  dice1.innerHTML = value1;
-  dice2.innerHTML = value2;
-  dice3.innerHTML = value3;
+  var value1 = Math.floor(Math.random() * 6) + 1;
+  var value2 = Math.floor(Math.random() * 6) + 1;
+  var value3 = Math.floor(Math.random() * 6) + 1;
+
+  dice1.textContent = value1;
+  dice2.textContent = value2;
+  dice3.textContent = value3;
 }
-
-rollDiceBtn.addEventListener("click", rollDice);
