@@ -1,26 +1,18 @@
-.header {
-  text-align: center;
-  background-color: #f2f2f2;
-  padding: 20px;
+* {
+  box-sizing: border-box;
 }
 
-.header h1 {
+body {
+  font-family: Arial, sans-serif;
   margin: 0;
-}
-
-nav {
-  display: flex;
-  justify-content: center;
-}
-
-nav a {
-  margin: 0 10px;
+  padding: 0;
 }
 
 .container {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  margin: 20px;
 }
 
 .dice-container {
@@ -33,43 +25,101 @@ nav a {
   align-items: center;
   width: 100px;
   height: 100px;
-  margin: 20px;
-  border: 5px solid black;
-  border-radius: 50%;
-  font-size: 2em;
+  margin-right: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  font-size: 30px;
   font-weight: bold;
+  color: white;
+  background-color: #F44336;
+  cursor: pointer;
 }
 
 .dice.frozen {
   background-color: yellow;
+  cursor: default;
 }
 
 .buttons {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  margin: 20px;
+  align-items: center;
+  margin-right: 20px;
 }
 
-#roll-dice-btn, #stand-btn {
-  font-size: 1.5em;
-  margin: 0 10px;
-  padding: 10px;
+button {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #F44336;
+  color: white;
+  cursor: pointer;
 }
 
-.score {
-  margin-top: 20px;
+button:hover {
+  background-color: #e53935;
 }
 
-.score h3 {
+.count {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.results-header {
+  font-size: 20px;
+  font-weight: bold;
   margin-bottom: 10px;
 }
 
-.score ul {
-  margin: 0;
-  padding: 0;
+.results-list {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.score li {
-  margin: 10px 0;
+.results-item {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.results-item:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dice-container {
+    margin-bottom: 20px;
+  }
+
+  .dice {
+    margin-right: 10px;
+    width: 80px;
+    height: 80px;
+    font-size: 24px;
+  }
+
+  .buttons {
+    margin-right: 0;
+  }
+
+  .results {
+    margin-right: 0;
+  }
 }
