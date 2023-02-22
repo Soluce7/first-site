@@ -1,7 +1,7 @@
 const dice1 = document.getElementById('dice1');
 const dice2 = document.getElementById('dice2');
 const dice3 = document.getElementById('dice3');
-const rollDiceBtn = document.getElementById('roll-dice-btn');
+const rollDiceBtn = document.querySelector('.roll-button');
 
 function rollDice() {
   const diceValues = [];
@@ -14,4 +14,4 @@ function rollDice() {
   dice3.textContent = diceValues[2];
 }
 
-rollDice
+rollDiceBtn.addEventListener('click', rollDice);
