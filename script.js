@@ -1,26 +1,25 @@
-const rollBtn = document.getElementById("roll-btn");
-const diceElems = document.querySelectorAll(".dice");
+const diceSides = [
+  "&#9856;",
+  "&#9857;",
+  "&#9858;",
+  "&#9859;",
+  "&#9860;",
+  "&#9861;"
+];
 
-rollBtn.addEventListener("click", () => {
-  diceElems.forEach((dice) => {
-    const randomValue = Math.floor(Math.random() * 6) + 1;
-    dice.textContent = randomValue;
-  });
-});
+const rollDiceBtn = document.getElementById("roll-dice-btn");
+const dice1 = document.getElementById("dice1");
+const dice2 = document.getElementById("dice2");
+const dice3 = document.getElementById("dice3");
 
 function rollDice() {
-  // Get the dice squares
-  const dice1 = document.getElementById('dice1');
-  const dice2 = document.getElementById('dice2');
-  const dice3 = document.getElementById('dice3');
-  
-  // Generate random numbers for each dice
-  const value1 = Math.floor(Math.random() * 6) + 1;
-  const value2 = Math.floor(Math.random() * 6) + 1;
-  const value3 = Math.floor(Math.random() * 6) + 1;
-  
-  // Update the values of the dice squares
-  dice1.innerText = value1;
-  dice2.innerText = value2;
-  dice3.innerText = value3;
+  const value1 = diceSides[Math.floor(Math.random() * diceSides.length)];
+  const value2 = diceSides[Math.floor(Math.random() * diceSides.length)];
+  const value3 = diceSides[Math.floor(Math.random() * diceSides.length)];
+
+  dice1.innerHTML = value1;
+  dice2.innerHTML = value2;
+  dice3.innerHTML = value3;
 }
+
+rollDiceBtn.addEventListener("click", rollDice);
