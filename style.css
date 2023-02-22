@@ -1,74 +1,68 @@
 body {
   background-color: darkgreen;
+  font-family: sans-serif;
   color: white;
-  font-family: Arial, sans-serif;
+  margin: 0;
 }
 
 .header {
   background-color: turquoise;
-  color: white;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 10px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+nav a:hover {
+  text-decoration: underline;
 }
 
 .container {
-  margin: 0 auto;
-  max-width: 800px;
-  text-align: center;
+  max-width: 600px;
+  margin: 20px auto;
   padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.dice-container {
+  display: flex;
+  justify-content: space-between;
 }
 
 .dice {
-  display: inline-block;
-  width: 100px;
-  height: 100px;
-  margin: 10px;
+  width: 80px;
+  height: 80px;
   border: 2px solid white;
+  border-radius: 10px;
+  font-size: 48px;
   text-align: center;
-  line-height: 100px;
-  font-size: 36px;
+  line-height: 80px;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
-.roll-button {
+.roll-button, .stand-button {
   margin-top: 20px;
-  font-size: 18px;
+  font-size: 20px;
   padding: 10px 20px;
-  border: 2px solid white;
-  background-color: transparent;
+  border-radius: 5px;
+  border: none;
   color: white;
+  background-color: dodgerblue;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
 }
 
-.roll-button:hover {
-  background-color: white;
-  color: darkgreen;
-}
-
-.stand-button {
-  margin-top: 20px;
-  font-size: 18px;
-  padding: 10px 20px;
-  border: 2px solid white;
-  background-color: transparent;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.stand-button:hover {
-  background-color: white;
-  color: darkgreen;
-}
-
-@media (max-width: 600px) {
-  .dice {
-    width: 80px;
-    height: 80px;
-    line-height: 80px;
-    font-size: 24px;
-  }
+.roll-button:hover, .stand-button:hover {
+  background-color: deepskyblue;
 }
 
