@@ -1,6 +1,6 @@
-const dice1 = document.getElementById('d1');
-const dice2 = document.getElementById('d2');
-const dice3 = document.getElementById('d3');
+const dice1 = document.getElementById('dice1');
+const dice2 = document.getElementById('dice2');
+const dice3 = document.getElementById('dice3');
 const rollDiceBtn = document.querySelector('.roll-button');
 
 function rollDice() {
