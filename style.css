@@ -1,69 +1,75 @@
-body {
-  background-color: darkgreen;
-  color: white;
-  margin: 0;
-  padding: 0;
+.header {
+  text-align: center;
+  background-color: #f2f2f2;
+  padding: 20px;
 }
 
-.header {
-  background-color: turquoise;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
+.header h1 {
+  margin: 0;
 }
 
 nav {
   display: flex;
+  justify-content: center;
 }
 
 nav a {
   margin: 0 10px;
-  color: white;
-  text-decoration: none;
-}
-
-nav a:hover {
-  text-decoration: underline;
 }
 
 .container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .dice-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
 }
 
 .dice {
-  width: 100px;
-  height: 100px;
-  background-color: white;
-  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 40px;
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+  border: 5px solid black;
+  border-radius: 50%;
+  font-size: 2em;
   font-weight: bold;
+}
+
+.dice.frozen {
+  background-color: yellow;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+#roll-dice-btn, #stand-btn {
+  font-size: 1.5em;
   margin: 0 10px;
-}
-
-.roll-button, .stand-button {
   padding: 10px;
-  background-color: turquoise;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 20px;
-  margin-right: 10px;
-  cursor: pointer;
 }
 
-.roll-button:hover, .stand-button:hover {
-  background-color: white;
-  color: turquoise;
+.score {
+  margin-top: 20px;
+}
+
+.score h3 {
+  margin-bottom: 10px;
+}
+
+.score ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.score li {
+  margin: 10px 0;
 }
