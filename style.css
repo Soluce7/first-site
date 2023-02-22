@@ -1,45 +1,41 @@
-/* Header */
+body {
+  background-color: darkgreen;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
 .header {
   background-color: turquoise;
   padding: 10px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
-.header h1 {
-  margin: 0;
-  color: white;
-  font-size: 24px;
-}
-
-.header nav {
+nav {
   display: flex;
 }
 
-.header a {
+nav a {
+  margin: 0 10px;
   color: white;
   text-decoration: none;
-  margin: 0 10px;
 }
 
-/* Body */
-body {
-  background-color: darkgreen;
+nav a:hover {
+  text-decoration: underline;
 }
 
 .container {
-  width: 100%;
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
-  box-sizing: border-box;
-  text-align: center;
 }
 
 .dice-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 20px;
 }
 
@@ -47,25 +43,27 @@ body {
   width: 100px;
   height: 100px;
   background-color: white;
-  border: 1px solid black;
-  font-size: 24px;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  font-size: 40px;
   font-weight: bold;
-}
-
-.roll-button, .stand-button {
-  padding: 10px 20px;
-  background-color: turquoise;
-  border: none;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
   margin: 0 10px;
 }
 
+.roll-button, .stand-button {
+  padding: 10px;
+  background-color: turquoise;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
 .roll-button:hover, .stand-button:hover {
-  background-color: lightblue;
+  background-color: white;
+  color: turquoise;
 }
